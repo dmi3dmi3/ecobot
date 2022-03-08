@@ -44,12 +44,12 @@ async def habbits_handler(message: types.Message):
 
 @dp.message_handler(commands=[kb.sort_garbage])
 async def garbage_handler(message: types.Message):
-    await message.reply("Garbage", reply_markup=garb.main_kb)
+    await message.reply("Внизу на клавиатуре ты видишь типы мусора, который можно и нужно сортировать и сдавать в конкретные пункты приема", reply_markup=garb.main_kb)
 
 
 @dp.message_handler(commands=[garb.sort_batteries])
 async def batteries_handler(message: types.Message):
-    await message.reply("Батарейки можно здавать в магазинах \"Эльдорадо\", \"Вкусвилл\", \"Леруа Мерлен\" и \"Лента\"")
+    await message.reply("Батарейки можно cдавать в магазинах \"Эльдорадо\", \"Вкусвилл\", \"Леруа Мерлен\" и \"Лента\"")
 
 
 @dp.message_handler(commands=[garb.sort_plastic_and_glass])
@@ -73,7 +73,11 @@ async def plastic_handler(message: types.Message):
 
 @dp.message_handler(commands=[garb.sort_old_clothes])
 async def clothes_handler(message: types.Message):
-    await message.reply("Старая одежда")
+    await message.reply('''Старую одежду можно отдавать "Доброворот" — это большие контейнеры, которые установлены во многих дворах Москвы.
+    Есть организованные обмены одеждой — свопы, их можно найти в любом крупном городе.
+    Некоторые магазины одежды принимают старые вещи на переработку, например, магазин "Uniqlo".''')
+
+
 
 
 
